@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@layer utilities {
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+    
+    .snap-start {
+      scroll-snap-align: start;
+    }
+  }
