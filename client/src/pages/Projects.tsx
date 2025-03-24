@@ -15,18 +15,18 @@ const colors = {
 // Enhanced projects data with more detailed information
 const projectsData = [
     {
-        "id": 1,
-        "title": "AI/ML-Based Cryptographic Algorithm Identification",
-        "shortDescription": "Intelligent system leveraging AI/ML to automatically identify cryptographic algorithms and enhance cybersecurity.",
-        "fullDescription": "Developed as part of DU Hacks 4.0 at DDU Nadiad in 2025, this project automates the identification of cryptographic algorithms from complex datasets. By leveraging advanced machine learning techniques, it analyzes data patterns to detect algorithm weaknesses and improve security. The system integrates a Python-based Random Forest model for predictions, a robust Spring Boot backend with JWT and Spring Security for authentication, and a fast, responsive React-based frontend. This seamless integration of technologies enables real-time analysis and rapid response to evolving cyber threats.",
-        "image": "/CryptML.png",
-        "mockupImages": [
-            "/CryptML(1).png",
-            "/CryptML(2).png",
-            "/CryptML(3).png"
+        id: 1,
+        title: "AI/ML-Based Cryptographic Algorithm Identification",
+        shortDescription: "Intelligent system leveraging AI/ML to automatically identify cryptographic algorithms and enhance cybersecurity.",
+        fullDescription: "Developed as part of DU Hacks 4.0 at DDU Nadiad in 2025, this project automates the identification of cryptographic algorithms from complex datasets. By leveraging advanced machine learning techniques, it analyzes data patterns to detect algorithm weaknesses and improve security. The system integrates a Python-based Random Forest model for predictions, a robust Spring Boot backend with JWT and Spring Security for authentication, and a fast, responsive React-based frontend. This seamless integration of technologies enables real-time analysis and rapid response to evolving cyber threats.",
+        image: "/CryptML/CryptML.png",
+        mockupImages: [
+            "/CryptML/CryptML(1).png",
+            "/CryptML/CryptML(2).png",
+            "/CryptML/CryptML(3).png"
         ],
-        "tags": ["AI", "ML", "Cryptography", "Security", "Java", "Python"],
-        "technologies": [
+        tags: ["AI", "ML", "Cryptography", "Security", "Java", "Python"],
+        technologies: [
             "React",
             "Vite",
             "Tailwind CSS",
@@ -37,11 +37,11 @@ const projectsData = [
             "Random Forest",
             "Docker"
         ],
-        "githubUrl": "https://github.com/razasoneji/CryptML",
-        "liveUrl": "https://crypt-ml.vercel.app/",
-        "color": "black",
-        "year": "2025",
-        "category": "Cybersecurity"
+        githubUrl: "https://github.com/razasoneji/CryptML",
+        liveUrl: "https://crypt-ml.vercel.app/",
+        color: "black",
+        year: "2025",
+        category: "Cybersecurity"
     },
     {
         id: 2,
