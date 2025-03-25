@@ -43,6 +43,8 @@ const LandingPage: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
+
 
     useEffect(() => {
         if (!canvasRef.current) return;
@@ -151,6 +153,17 @@ const LandingPage: React.FC = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
+            setScrollProgress(progress);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!containerRef.current) return;
 
@@ -175,9 +188,18 @@ const LandingPage: React.FC = () => {
 
     return (
         <div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-gray-900 to-black">
-            <FloatingNavbar/>
+            <FloatingNavbar />
             <br /><br />
             <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10" />
+            <div
+                className="fixed top-0 left-0 h-1 w-full transition-all duration-300 ease-out"
+                style={{
+                    width: `${scrollProgress}%`,
+                    backgroundColor: colors.cherry,
+                    zIndex: 5,
+                    boxShadow: `0 0 15px ${colors.cherry}`
+                }}
+            />
 
             {/* Main Landing Section */}
             <motion.div
@@ -267,7 +289,7 @@ const LandingPage: React.FC = () => {
                                 transition={{ delay: 0.8 }}
                                 className="pt-8"
                             >
-                                
+
                             </motion.div>
                         </motion.div>
                     </div>
@@ -287,7 +309,7 @@ const LandingPage: React.FC = () => {
                 <Projects />
             </div>
             <div id="contact" className="min-h-screen snap-start px-4">
-                <ContactMe/>
+                <ContactMe />
             </div>
 
             {/* Loading screen */}
