@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 
 // Define color palette to match LandingPage.tsx
 const colors = {
@@ -27,29 +28,29 @@ const achievements = [
 ];
 
 const AboutMe: React.FC = () => {
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative z-10 min-h-screen flex items-center justify-center px-4 snap-start"
+            className="relative z-10 min-h-screen flex items-center justify-center px-4 py-16 md:py-24 snap-start"
         >
             <div className="max-w-5xl w-full mx-auto">
                 {/* Enhanced Heading with Gradient */}
-                <h1
-                    className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text"
-                >
+                <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
                     About Me
                 </h1>
 
-                {/* Photo and Introduction */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-16">
+                {/* Photo and Introduction - Improved Mobile Layout */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-12 md:mb-16">
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5 }}
                         whileHover={{ scale: 1.05 }}
-                        className="relative h-64 w-64 rounded-full overflow-hidden border-4 cursor-pointer"
+                        className="relative h-48 w-48 md:h-64 md:w-64 rounded-full overflow-hidden border-4 cursor-pointer"
                         style={{
                             borderColor: colors.cherry,
                             boxShadow: `0 0 20px ${colors.cherry}40`,
@@ -65,63 +66,58 @@ const AboutMe: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="text-xl max-w-lg text-center md:text-left"
+                        className="text-lg md:text-xl max-w-lg text-center md:text-left px-4 md:px-0"
                         style={{ color: colors.offWhiteDark }}
                     >
                         I'm a computer engineering student at Dharmsinh Desai University, Nadiad, with a passion for creating innovative solutions through code. My journey in tech has been marked by several achievements in hackathons, where I've collaborated with talented peers to push the boundaries of technology.
                     </motion.p>
                 </div>
 
-                {/* Achievements Timeline */}
-                <div className="relative mb-16">
+                {/* Achievements Timeline - Mobile Optimized */}
+                <div className="relative mb-12 md:mb-16 px-4 md:px-0">
                     <div
-                        className="absolute top-0 bottom-0 left-1/2 w-0.5 transform -translate-x-1/2"
+                        className="absolute top-0 bottom-0 left-4 md:left-1/2 w-0.5 transform md:-translate-x-1/2"
                         style={{ background: colors.cherry }}
                     />
                     {achievements.map((achievement, index) => (
                         <div
                             key={index}
-                            className={`flex items-center mb-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                            className={`flex flex-col md:flex-row items-start md:items-center mb-8 ${
+                                isMobile ? 'ml-8' : index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                            }`}
                         >
                             <motion.div
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                                initial={{ opacity: 0, x: isMobile ? -50 : (index % 2 === 0 ? -100 : 100) }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5 }}
                                 viewport={{ once: true }}
-                                whileHover={{ y: -10, boxShadow: `0 10px 20px ${colors.cherry}20` }}
+                                whileHover={{ y: -5, boxShadow: `0 10px 20px ${colors.cherry}20` }}
                                 className="w-full md:w-5/12 p-4"
                             >
-                                <div className="bg-white/10 p-6 rounded-lg shadow-lg backdrop-blur-sm">
-                                    <h3
-                                        className="text-2xl font-semibold"
-                                        style={{ color: colors.offWhite }}
-                                    >
+                                <div className="bg-white/10 p-4 md:p-6 rounded-lg shadow-lg backdrop-blur-sm">
+                                    <h3 className="text-xl md:text-2xl font-semibold" style={{ color: colors.offWhite }}>
                                         {achievement.title}
                                     </h3>
-                                    <p
-                                        className="text-lg"
-                                        style={{ color: colors.offWhiteDark }}
-                                    >
+                                    <p className="text-base md:text-lg mt-2" style={{ color: colors.offWhiteDark }}>
                                         {achievement.description}
                                     </p>
                                 </div>
                             </motion.div>
-                            <div className="hidden md:flex w-2/12 justify-center">
-                                <div
-                                    className="w-4 h-4 rounded-full"
-                                    style={{ background: colors.cherry }}
-                                />
-                            </div>
-                            <div className="w-full md:w-5/12" />
+                            {!isMobile && (
+                                <>
+                                    <div className="hidden md:flex w-2/12 justify-center">
+                                        <div className="w-4 h-4 rounded-full" style={{ background: colors.cherry }} />
+                                    </div>
+                                    <div className="w-full md:w-5/12" />
+                                </>
+                            )}
                         </div>
                     ))}
                 </div>
 
-                {/* Education Section */}
-                <div className="mt-16">
-                    <h2
-                        className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text"
-                    >
+                {/* Education Section - Mobile Optimized */}
+                <div className="mt-12 md:mt-16 px-4 md:px-0">
+                    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
                         Education
                     </h2>
                     <motion.div
@@ -129,43 +125,50 @@ const AboutMe: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="bg-white/10 p-6 rounded-lg shadow-lg max-w-2xl mx-auto backdrop-blur-sm space-y-8"
+                        className="bg-white/10 p-4 md:p-6 rounded-lg shadow-lg max-w-2xl mx-auto backdrop-blur-sm space-y-6 md:space-y-8"
                     >
-                        {/* SSC */}
-                        <div className="border-l-4 pl-4" style={{ borderColor: colors.cherry }}>
-                            <h3 className="text-xl font-semibold" style={{ color: colors.offWhite }}>
-                                Knowledge High School
-                            </h3>
-                            <p className="text-lg" style={{ color: colors.offWhiteDark }}>
-                                S.S.C Board (2020)<br />
-                                Anand, Gujarat<br />
-                                Percentage: 89.33%
-                            </p>
-                        </div>
-
-                        {/* HSC */}
-                        <div className="border-l-4 pl-4" style={{ borderColor: colors.cherry }}>
-                            <h3 className="text-xl font-semibold" style={{ color: colors.offWhite }}>
-                                Knowledge High School
-                            </h3>
-                            <p className="text-lg" style={{ color: colors.offWhiteDark }}>
-                                H.S.C Board (2022)<br />
-                                Anand, Gujarat<br />
-                                Percentage: 84.76%
-                            </p>
-                        </div>
-
-                        {/* B.Tech */}
-                        <div className="border-l-4 pl-4" style={{ borderColor: colors.cherry }}>
-                            <h3 className="text-xl font-semibold" style={{ color: colors.offWhite }}>
-                                Dharmsinh Desai University
-                            </h3>
-                            <p className="text-lg" style={{ color: colors.offWhiteDark }}>
-                                B.Tech Computer Engineering (2022-2026)<br />
-                                Nadiad, India<br />
-                                Current CPI: 8.31
-                            </p>
-                        </div>
+                        {/* Education items with responsive spacing */}
+                        {[
+                            {
+                                school: "Dharmsinh Desai University",
+                                details: [
+                                    "B.Tech Computer Engineering (2022-2026)",
+                                    "Nadiad, India",
+                                    "Current CPI: 8.31"
+                                ]
+                            },
+                            {
+                                school: "Knowledge High School",
+                                details: [
+                                    "H.S.C Board (2022)",
+                                    "Anand, Gujarat",
+                                    "Percentage: 84.76%"
+                                ]
+                            },
+                            {
+                                school: "Knowledge High School",
+                                details: [
+                                    "S.S.C Board (2020)",
+                                    "Anand, Gujarat",
+                                    "Percentage: 89.33%"
+                                ]
+                            }
+                        ].map((edu, index) => (
+                            <div
+                                key={index}
+                                className="border-l-4 pl-4"
+                                style={{ borderColor: colors.cherry }}
+                            >
+                                <h3 className="text-lg md:text-xl font-semibold" style={{ color: colors.offWhite }}>
+                                    {edu.school}
+                                </h3>
+                                <div className="text-base md:text-lg space-y-1" style={{ color: colors.offWhiteDark }}>
+                                    {edu.details.map((detail, i) => (
+                                        <p key={i}>{detail}</p>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </motion.div>
                 </div>
             </div>

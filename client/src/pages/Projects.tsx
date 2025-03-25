@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaTimes, FaChevronRight } from 'react-icons/fa';
-import { MdExpandMore } from 'react-icons/md';
 
 // Define colors object to match your existing theme
 const colors = {
@@ -45,66 +44,155 @@ const projectsData = [
     },
     {
         id: 2,
-        title: "Cloud Finance Dashboard",
-        shortDescription: "Financial analytics platform with real-time data visualization and predictive forecasting.",
-        fullDescription: "A comprehensive financial analytics platform designed for enterprise users that provides real-time data visualization, predictive forecasting, and integrated budget management tools. The system pulls data from multiple sources including financial APIs, user-uploaded spreadsheets, and connected banking institutions.\n\nThe dashboard features customizable widgets for different financial metrics, an AI-powered forecasting system that predicts future trends based on historical data, and an alerting system that notifies users of significant changes or anomalies in their financial data. The backend uses a microservices architecture for scalability and reliability.",
-        image: "/project-finance.webp",
+        title: "LeafCare AI",
+        shortDescription: "Enterprise plant disease detection system using deep learning and computer vision for agricultural optimization.",
+        fullDescription: "An AI-powered solution addressing annual 40% crop loss through automated plant disease detection. Combines deep convolutional neural networks (CNN) with transfer learning for 98.2% validation accuracy. Features real-time monitoring via IoT integration, predictive analytics for disease patterns, and seamless integration with farm management systems. The system processes 150,000+ images across 38 plant species and 87 disease classes using a robust pipeline with image normalization/augmentation. Built with TensorFlow and optimized with NVIDIA A100 GPUs, it offers scalable cloud deployment with continuous model updates through user feedback loops. Supports precision agriculture, crop insurance analytics, and academic research with comprehensive datasets.",
+        image: "/LeafCare/LeafCare.png",
         mockupImages: [
-            "/finance-dashboard-screenshot1.webp",
-            "/finance-dashboard-screenshot2.webp",
-            "/finance-dashboard-screenshot3.webp"
+            "/LeafCare/LeafCare(1).png",
+            "/LeafCare/LeafCare(2).png",
+            "/LeafCare/LeafCare(3).png"
         ],
-        tags: ["TypeScript", "React", "D3.js", "Express", "MongoDB"],
-        technologies: ["TypeScript", "React", "Redux", "D3.js", "Express.js", "MongoDB", "Node.js", "AWS Lambda"],
-        githubUrl: "https://github.com/yourusername/finance-dashboard",
-        liveUrl: "https://finance-dashboard.demo",
-        color: "#8B0000",
+        tags: ["AI/ML", "Agriculture", "Computer Vision", "Deep Learning", "IoT", "TensorFlow"],
+        technologies: [
+            "TensorFlow",
+            "CNN Architecture",
+            "Python",
+            "React",
+            "Node.js",
+            "Docker",
+            "AWS EC2",
+            "MongoDB",
+            "PostgreSQL",
+            "NVIDIA CUDA",
+            "Image Augmentation",
+            "JWT Authentication"
+        ],
+        githubUrl: "https://github.com/DanishVahora/leafcare",
+        liveUrl: "https://leafcare-production.up.railway.app/",
+        color: "#2E8B57",
         year: "2023",
-        category: "Web Application"
+        category: "Machine Learning"
     },
     {
         id: 3,
-        title: "GeoSpatial Analysis System",
-        shortDescription: "Platform for analyzing and visualizing geospatial data with interactive 3D terrain visualization.",
-        fullDescription: "A powerful geospatial analysis platform that enables researchers and organizations to analyze and visualize complex geographical data. The system supports custom data layers, heat maps, and interactive 3D terrain visualization with real-time data overlays.\n\nBuilt with a modular architecture, the platform can ingest data from various sources including satellite imagery, sensor networks, GPS tracking systems, and government data portals. Advanced features include custom polygon creation, distance calculations, density analysis, and temporal data animations. The backend utilizes optimized geospatial databases for handling large datasets efficiently.",
-        image: "/project-geospatial.webp",
+        title: "Pawn Wars",
+        shortDescription: "Modern chess platform featuring real-time multiplayer battles and AI integration with Stockfish engine.",
+        fullDescription: "A dynamic chess application combining traditional gameplay with modern tech stack. Features real-time multiplayer matches with Socket.io synchronization, AI mode powered by Stockfish engine (difficulty levels from beginner to grandmaster), and interactive elements like move history/analysis and in-game chat. Includes dual control schemes (click/drag), responsive design for all devices, and secure room-based matchmaking. Built with React TypeScript frontend, Node.js/Express backend, and chess.js for game logic. Offers evaluation bar, undo functionality, and deployable chess engine insights for strategic improvement.",
+        image: "/PawnWars/PawnWars.png",
         mockupImages: [
-            "/geo-analysis-screenshot1.webp",
-            "/geo-analysis-screenshot2.webp",
-            "/geo-analysis-screenshot3.webp"
+            "/PawnWars/PawnWars(1).png",
+            "/PawnWars/PawnWars(2).png",
+            "/PawnWars/PawnWars(3).png"
         ],
-        tags: ["JavaScript", "Three.js", "MapboxGL", "Flask", "PostgreSQL"],
-        technologies: ["JavaScript", "Three.js", "MapboxGL", "WebGL", "Flask", "PostgreSQL", "PostGIS", "Python"],
-        githubUrl: "https://github.com/yourusername/geo-analysis",
-        liveUrl: "https://geo-analysis.demo",
-        color: "#FF4D6D",
-        year: "2023",
-        category: "Data Visualization"
+        tags: ["Chess", "Multiplayer", "AI", "Real-time", "TypeScript", "WebSocket"],
+        technologies: [
+            "React",
+            "TypeScript",
+            "Vite",
+            "Node.js",
+            "Express",
+            "Socket.io",
+            "chess.js",
+            "Stockfish",
+            "Tailwind CSS",
+            "WebRTC",
+            "JWT",
+            "Vercel"],
+        githubUrl: "https://github.com/DanishVahora/PawnWars.git",
+        liveUrl: "https://pawn-wars.vercel.app/",
+        color: "black",
+        year: "2024",
+        category: "Web Application"
     },
     {
         id: 4,
-        title: "Flutter Health Tracker",
-        shortDescription: "Cross-platform mobile application for comprehensive health tracking with analytics.",
-        fullDescription: "A cross-platform mobile application built with Flutter for comprehensive health and fitness tracking. The app provides users with tools to log exercises, track nutrition, monitor vital health metrics, and receive personalized health insights based on their data.\n\nKey features include workout plans with video demonstrations, barcode scanning for automatic nutritional information, integration with wearable devices for tracking heart rate and sleep patterns, and social features for sharing achievements with friends. The backend is built with Node.js and uses Firebase for real-time data synchronization across devices, with specialized algorithms to analyze health trends and provide actionable recommendations.",
-        image: "/project-health.webp",
+        title: "केB Karo",
+        shortDescription: "Full-stack transportation solution with real-time tracking, built on ASP.NET Core MVC and SQL Server.",
+        fullDescription: "A comprehensive cab management platform enabling users to book rides and drivers to accept/reject requests via interactive interfaces. Features dual authentication systems for users/drivers, real-time location tracking using Leaflet.js API, and booking status management (pending/completed/canceled). Built with ASP.NET Core MVC backend, Entity Framework Core ORM, and Razor Pages/Bootstrap frontend. Implements complex booking workflows with fare calculation based on distance, historical data tracking, and rejection logging. Database architecture includes SQL Server tables for users, drivers, cabs, bookings, and rejected bookings. Supports responsive design across devices with potential for future expansion including payment integration and driver rating systems.",
+        image: "/CabKaro/image.png",
         mockupImages: [
-            "/health-tracker-screenshot1.webp",
-            "/health-tracker-screenshot2.webp",
-            "/health-tracker-screenshot3.webp"
+            "/CabKaro/image(1).png",
+            "/CabKaro/image(2).png",
+            "/CabKaro/image(3).png"
         ],
-        tags: ["Dart", "Flutter", "Firebase", "Node.js"],
-        technologies: ["Dart", "Flutter", "Firebase", "Node.js", "Express.js", "TensorFlow Lite", "Google Fit API", "Apple HealthKit"],
-        githubUrl: "https://github.com/yourusername/health-tracker",
+        tags: ["ASP.NET", "MVC", "SQL", "Real-time", "Bootstrap", "Entity Framework"],
+        technologies: [
+            "ASP.NET Core",
+            "Entity Framework Core",
+            "SQL Server",
+            "Razor Pages",
+            "Leaflet.js",
+            "Bootstrap",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "JWT",
+            "REST API",
+        ],
+        githubUrl: "https://github.com/DanishVahora/CabBookingSystem.git",
+        liveUrl: "https://CabBooking/",
+        color: "black",
+        year: "2024",
+        category: "Web Application"
+    },
+    {
+        id: 5,
+        title: "EmotionAI",
+        shortDescription: "Real-time facial emotion detection system using deep learning and computer vision.",
+        fullDescription: "A CNN-based emotion recognition solution that analyzes facial expressions through webcam feeds or uploaded images. Features 7 emotion categories (Happy, Sad, Angry, Disgust, Fear, Surprise, Neutral) with live confidence scores and historical trend tracking. Built with a TensorFlow/Keras model trained on FER2013 dataset (63% validation accuracy), integrated with OpenCV for real-time face detection. The system processes 48x48 grayscale images through 4 convolutional layers with max pooling and dropout regularization. Includes a React frontend with Recharts visualization and Flask API backend. Supports both live camera analysis and image uploads with emotion history analytics.",
+        image: "/EmotionAI/EmotionAI.png",
+        mockupImages: [
+            "EmotionAI/EmotionAI(1).png",
+            "EmotionAI/EmotionAI(2).png",
+            "EmotionAI/EmotionAI(3).png"
+        ],
+        tags: ["Machine Learning", "Computer Vision", "Real-time", "React", "Python", "CNN"],
+        technologies: ["React",
+            "TailwindCSS",
+            "Recharts",
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "OpenCV",
+            "Flask",
+            "FER2013 Dataset",
+            "Convolutional Neural Networks",
+            "Axios",
+            "Uvicorn",
+            "Face Detection",
+            "Emotion Recognition"],
+        githubUrl: "https://github.com/DanishVahora/CNN_Emotion_Recognition.git",
+        liveUrl: "https://emotionai-demo.vercel.app/",
+        color: "blue",
+        year: "2023",
+        category: "Machine Learning"
+    },
+    {
+        id: 6,
+        title: "FitnessTracking Application",
+        shortDescription: "Mobile fitness tracking app with Flutter frontend and Node.js backend for activity monitoring and personalized workouts.",
+        fullDescription: "A comprehensive mobile fitness tracking application designed to help users monitor physical activities, track workouts, and achieve fitness goals. Features include JWT-based user authentication, workout logging, calorie tracking, progress analytics with charts, and personalized workout generation. Built with Flutter and Dart for a cross-platform mobile experience, coupled with a Node.js/Express backend for API management. Includes secure authentication middleware and supports both MongoDB/MySQL databases. The responsive design ensures seamless experience across mobile devices.",
+        image: "/FtnessTracker/FtnessTracker.jpg",
+        mockupImages: [
+            "/FtnessTracker/FtnessTracker(1).png",
+            "/FtnessTracker/FtnessTracker(2).png",
+            "/FtnessTracker/FtnessTracker(3).png"
+        ],
+        tags: ["Dart", "Flutter", "MongoDB", "Node.js", "Fitness", "Mobile App"],
+        technologies: ["Dart", "Flutter", "MongoDB", "Node.js", "Express.js", "JWT", "Bcrypt", "REST API", "Charting", "Cross-Platform"],
+        githubUrl: "https://github.com/DanishVahora/fitness_app_frontend-main.git",
         liveUrl: "https://health-tracker.demo",
-        color: "#DC143C",
+        color: "black",
         year: "2024",
         category: "Mobile Application"
-    }
+    },
+    
 ];
 
 // Tag component for project technologies
 const Tag = ({ name }: { name: string }) => (
-    <span className="px-3 py-1 text-sm font-medium rounded-full bg-white/10 text-white/90 backdrop-blur-sm shadow-sm">
+    <span className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm font-medium rounded-full bg-white/10 text-white/90">
         {name}
     </span>
 );
@@ -115,7 +203,6 @@ const Button = ({
     onClick,
     variant = "primary",
     className = "",
-    style = {}
 }: {
     children: React.ReactNode,
     onClick?: () => void,
@@ -163,7 +250,7 @@ const ProjectCard = ({
     index: number,
     onOpenModal: (projectId: number) => void
 }) => {
-    const [isDescExpanded, setIsDescExpanded] = useState(false);
+    const [isDescExpanded] = useState(false);
 
     return (
         <motion.div
@@ -171,100 +258,82 @@ const ProjectCard = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 * index }}
             viewport={{ once: true, amount: 0.3 }}
-            className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-white/20 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-cherry/10"
-            style={{ background: `linear-gradient(145deg, rgba(40,40,45,0.4), rgba(20,20,25,0.7))` }}
+            className="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-white/20 shadow-xl transition-all duration-300"
         >
-            {/* Project image with aspect ratio control */}
+            {/* Image container */}
             <div className="relative aspect-[16/9] overflow-hidden">
-                <div
-                    className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10"
-                    style={{ backgroundImage: `linear-gradient(to bottom, transparent 50%, ${project.color}99)` }}
-                ></div>
                 <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
-                    onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/api/placeholder/600/340";
-                    }}
                 />
-
-                {/* Floating category label */}
-                <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/30 text-white/90 border border-white/10">
-                    {project.category}
+                
+                {/* Category and year tags - More mobile friendly */}
+                <div className="absolute top-2 sm:top-4 left-2 sm:left-4 z-20">
+                    <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full backdrop-blur-md bg-black/30 text-white/90 border border-white/10">
+                        {project.category}
+                    </span>
                 </div>
-
-                {/* Year tag */}
-                <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/30 text-white/90 border border-white/10">
-                    {project.year}
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-20">
+                    <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full backdrop-blur-md bg-black/30 text-white/90 border border-white/10">
+                        {project.year}
+                    </span>
                 </div>
             </div>
 
-            {/* Project info */}
-            <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-cherry transition-colors duration-300">
+            {/* Content section */}
+            <div className="p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white group-hover:text-cherry transition-colors duration-300">
                     {project.title}
                 </h3>
 
+                {/* Description with mobile-friendly text size */}
                 <motion.div
-                    className="text-white/80 mb-4 overflow-hidden relative"
+                    className="text-sm sm:text-base text-white/80 mb-4 overflow-hidden relative"
                     animate={{ height: isDescExpanded ? "auto" : "4.5rem" }}
-                    transition={{ duration: 0.3 }}
                 >
                     <p className={`leading-relaxed ${!isDescExpanded && "line-clamp-3"}`}>
                         {isDescExpanded ? project.fullDescription : project.shortDescription}
                     </p>
-
-                    {!isDescExpanded && (
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#1a1a1a] to-transparent"></div>
-                    )}
                 </motion.div>
 
-                {/* Expand/collapse description button */}
-                <Button
-                    variant="secondary"
-                    onClick={() => setIsDescExpanded(!isDescExpanded)}
-                    className="mb-4 text-sm"
-                >
-                    {isDescExpanded ? "Show Less" : "Show More"}
-                    <MdExpandMore className={`transform transition-transform ${isDescExpanded ? "rotate-180" : ""}`} />
-                </Button>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                    {project.tags.map((tag, i) => (
+                {/* Tags with responsive layout */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
+                    {project.tags.slice(0, 4).map((tag, i) => (
                         <Tag key={i} name={tag} />
                     ))}
+                    {project.tags.length > 4 && (
+                        <span className="text-xs sm:text-sm text-white/60">+{project.tags.length - 4} more</span>
+                    )}
                 </div>
 
-                {/* Actions */}
-                <div className="flex gap-3 mt-6">
+                {/* Action buttons with responsive layout */}
+                <div className="flex flex-wrap gap-2 sm:gap-3 mt-4">
                     <Button
                         variant="secondary"
                         onClick={() => window.open(project.githubUrl, "_blank")}
+                        className="text-sm sm:text-base"
                     >
-                        <FaGithub size={16} />
-                        <span>Code</span>
+                        <FaGithub size={14} />
+                        <span className="hidden sm:inline">Code</span>
                     </Button>
 
                     <Button
                         variant="primary"
                         onClick={() => window.open(project.liveUrl, "_blank")}
-                        className="bg-gradient-to-r"
-                        style={{ backgroundImage: `linear-gradient(135deg, ${project.color}, #8B0000)` }}
+                        className="text-sm sm:text-base"
                     >
-                        <FaExternalLinkAlt size={14} />
-                        <span>Live Demo</span>
+                        <FaExternalLinkAlt size={12} />
+                        <span className="hidden sm:inline">Live Demo</span>
                     </Button>
 
                     <Button
                         variant="outline"
                         onClick={() => onOpenModal(project.id)}
-                        className="ml-auto"
+                        className="ml-auto text-sm sm:text-base"
                     >
                         <span>Details</span>
-                        <FaChevronRight size={12} />
+                        <FaChevronRight size={10} />
                     </Button>
                 </div>
             </div>
@@ -350,8 +419,8 @@ const ProjectModal = ({
                                             key={idx}
                                             onClick={() => setCurrentImageIndex(idx)}
                                             className={`w-3 h-3 rounded-full transition-all ${currentImageIndex === idx
-                                                    ? 'bg-white scale-110'
-                                                    : 'bg-white/30 hover:bg-white/50'
+                                                ? 'bg-white scale-110'
+                                                : 'bg-white/30 hover:bg-white/50'
                                                 }`}
                                             aria-label={`View image ${idx + 1}`}
                                         />
@@ -423,34 +492,6 @@ const ProjectModal = ({
     );
 };
 
-// Category filter buttons
-const CategoryFilter = ({ categories, activeFilter, setFilter }: {
-    categories: string[],
-    activeFilter: string,
-    setFilter: (filter: string) => void
-}) => {
-    return (
-        <div className="flex flex-wrap justify-center gap-3 mb-12 px-4">
-            {categories.map((category, index) => (
-                <motion.button
-                    key={category}
-                    onClick={() => setFilter(category)}
-                    className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === category
-                            ? 'bg-gradient-to-r from-cherry to-cherryDark text-white shadow-lg shadow-cherry/30'
-                            : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
-                        }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + (index * 0.05) }}
-                >
-                    {category}
-                </motion.button>
-            ))}
-        </div>
-    );
-};
 
 // Main Projects component
 const Projects: React.FC = () => {
@@ -474,70 +515,55 @@ const Projects: React.FC = () => {
     };
 
     return (
-        <div className="relative z-10 min-h-screen px-4 py-20">
+        <div className="relative z-10 min-h-screen px-4 py-12 sm:py-20">
             <div className="max-w-7xl mx-auto">
-                {/* Section header */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                >
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className="text-6xl font-bold mb-6 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
-                            Portfolio
-                        </h2>
-                    </motion.div>
-
-                    <motion.p
-                        className="text-xl max-w-2xl mx-auto"
-                        style={{ color: colors.offWhiteDark }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                    >
+                {/* Responsive header */}
+                <motion.div className="text-center mb-8 sm:mb-16">
+                    <h2 className="text-4xl sm:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
+                        Projects
+                    </h2>
+                    <br />
+                    <p className="text-base sm:text-xl max-w-2xl mx-auto px-4" style={{ color: colors.offWhiteDark }}>
                         A showcase of my recent projects spanning full-stack development,
                         machine learning, and interactive experiences.
-                    </motion.p>
+                    </p>
                 </motion.div>
 
-                {/* Category filter */}
-                <CategoryFilter
-                    categories={allCategories}
-                    activeFilter={filter}
-                    setFilter={setFilter}
-                />
+                {/* Responsive category filter */}
+                <div className="overflow-x-auto pb-4 mb-8 -mx-4 px-4">
+                    <div className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3">
+                        {allCategories.map((category) => (
+                            <motion.button
+                                key={category}
+                                onClick={() => setFilter(category)}
+                                className={`whitespace-nowrap px-3 sm:px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                                    filter === category
+                                        ? 'bg-gradient-to-r from-cherry to-cherryDark text-white'
+                                        : 'bg-white/5 text-white/70 hover:bg-white/10'
+                                }`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                {category}
+                            </motion.button>
+                        ))}
+                    </div>
+                </div>
 
-                {/* Projects grid with animation */}
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={filter}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <motion.div
-                            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-                            layout
-                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                        >
-                            {filteredProjects.map((project, index) => (
-                                <ProjectCard
-                                    key={project.id}
-                                    project={project}
-                                    index={index}
-                                    onOpenModal={openProjectModal}
-                                />
-                            ))}
-                        </motion.div>
-                    </motion.div>
-                </AnimatePresence>
+                {/* Responsive grid layout */}
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8"
+                    layout
+                >
+                    {filteredProjects.map((project, index) => (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            index={index}
+                            onOpenModal={openProjectModal}
+                        />
+                    ))}
+                </motion.div>
 
                 {/* Show message if no projects match filter */}
                 {filteredProjects.length === 0 && (

@@ -7,6 +7,8 @@ import Projects from './Projects';
 import TechStake from './TechStack';
 import AboutMe from './AboutMe';
 import FloatingNavbar from '../components/FloatingNavbar';
+import ContactMe from './ContactMe';
+
 // Custom color palette
 const colors = {
     cherry: '#DC143C',
@@ -139,6 +141,16 @@ const LandingPage: React.FC = () => {
         };
     }, []);
 
+    // Add resize handler for particles
+    useEffect(() => {
+        const handleResize = () => {
+            // ... update particles logic
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!containerRef.current) return;
 
@@ -173,16 +185,16 @@ const LandingPage: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="relative z-10 flex items-center justify-center min-h-screen px-4 snap-start"
+                className="relative z-10 flex items-center justify-center min-h-screen px-4 py-16 md:py-0 snap-start"
             >
                 <div
                     ref={containerRef}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    className="max-w-7xl w-full mx-auto p-12 backdrop-blur-xl bg-white/5 rounded-2xl transition-all duration-300 border border-white/10 shadow-2xl"
+                    className="max-w-7xl w-full mx-auto p-6 md:p-12 backdrop-blur-xl bg-white/5 rounded-2xl transition-all duration-300 border border-white/10 shadow-2xl"
                     style={{ transformStyle: 'preserve-3d' }}
                 >
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -190,7 +202,7 @@ const LandingPage: React.FC = () => {
                             className="flex justify-center lg:justify-start"
                         >
                             <div
-                                className="relative h-96 w-96 rounded-full overflow-hidden border-4"
+                                className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full overflow-hidden border-4"
                                 style={{
                                     borderColor: colors.cherry,
                                     boxShadow: `0 0 30px ${colors.cherry}40`,
@@ -209,25 +221,25 @@ const LandingPage: React.FC = () => {
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-center lg:text-left space-y-8"
+                            className="text-center lg:text-left space-y-4 md:space-y-8"
                             style={{ transform: 'translateZ(30px)' }}
                         >
-                            <h1 className="text-7xl font-bold">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
                                 <span className="bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
                                     Danish Vahora
                                 </span>
                             </h1>
 
-                            <h2 className="text-3xl font-light" style={{ color: colors.offWhite }}>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-light" style={{ color: colors.offWhite }}>
                                 Full Stack Developer & Creative Coder
                             </h2>
 
-                            <p className="text-xl" style={{ color: colors.offWhiteDark }}>
+                            <p className="text-base sm:text-lg md:text-xl" style={{ color: colors.offWhiteDark }}>
                                 Building exceptional digital experiences with modern technologies.
                                 Specializing in scalable applications and interactive web experiences.
                             </p>
 
-                            <div className="flex flex-wrap gap-6 justify-center lg:justify-start pt-4">
+                            <div className="flex flex-wrap gap-3 md:gap-6 justify-center lg:justify-start pt-4">
                                 {socialLinks.map((link, index) => (
                                     <motion.a
                                         key={index}
@@ -236,7 +248,7 @@ const LandingPage: React.FC = () => {
                                         rel="noopener noreferrer"
                                         whileHover={{ scale: 1.1, y: -5 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="flex items-center gap-3 px-6 py-3 rounded-full text-white font-medium transition-all duration-300"
+                                        className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full text-white text-sm md:text-base font-medium transition-all duration-300"
                                         style={{
                                             ...link.style,
                                             transform: `translateZ(${70 + index * 10}px)`,
@@ -244,7 +256,7 @@ const LandingPage: React.FC = () => {
                                         }}
                                     >
                                         {link.icon}
-                                        <span>{link.name}</span>
+                                        <span className="hidden sm:inline">{link.name}</span>
                                     </motion.a>
                                 ))}
                             </div>
@@ -262,26 +274,26 @@ const LandingPage: React.FC = () => {
                 </div>
             </motion.div>
 
-            <div id="about-me" className="min-h-screen snap-start">
+            <div id="about-me" className="min-h-screen snap-start px-4">
                 <AboutMe />
             </div>
-            <div id="tech-stack" className="min-h-screen snap-start">
+            <div id="tech-stack" className="min-h-screen snap-start px-4">
                 <TechStake />
             </div>
 
             {/* Additional sections */}
 
-            <div id="projects" className="min-h-screen snap-start">
+            <div id="projects" className="min-h-screen snap-start px-4">
                 <Projects />
             </div>
-            <div id="contact" className="min-h-screen snap-start">
-                {/* Contact section placeholder */}
+            <div id="contact" className="min-h-screen snap-start px-4">
+                <ContactMe/>
             </div>
 
             {/* Loading screen */}
             {!isLoaded && (
                 <div className="fixed inset-0 bg-black flex items-center justify-center">
-                    <div className="text-2xl font-light" style={{ color: colors.offWhite }}>
+                    <div className="text-lg sm:text-2xl font-light" style={{ color: colors.offWhite }}>
                         Loading...
                     </div>
                 </div>

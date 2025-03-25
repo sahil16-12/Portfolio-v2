@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const colors = {
@@ -92,45 +92,67 @@ const TechIcon = ({ badge, name, delay, index }: { badge: string, name: string, 
       style={{ 
         perspective: "1000px",
         transformStyle: "preserve-3d",
-        margin: "0.35rem",
-        display: "inline-block"
+        margin: "0.25rem",
+        display: "inline-block",
+        maxWidth: "100%"
       }}
     >
-      <img src={badge} alt={name} />
+      <img 
+        src={badge} 
+        alt={name} 
+        className="max-w-full h-auto"
+        style={{ 
+          transform: "translateZ(20px)",
+          filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
+        }} 
+      />
     </motion.div>
   );
 };
 
 const TechStake = () => {
   const [activeSection, setActiveSection] = useState('languages');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Add resize handler
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <motion.div 
       id="tech-stack"
-      className="relative z-10 min-h-screen px-4 py-20 snap-start"
+      className="relative z-10 min-h-screen px-2 sm:px-4 py-12 sm:py-20 snap-start"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className="max-w-7xl mx-auto">
+        {/* Title Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-6xl font-bold mb-6 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
+          <h2 className="text-4xl sm:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
             Tech Stack
           </h2>
-          <p className="text-xl" style={{ color: colors.offWhiteDark }}>
+          <p className="text-lg sm:text-xl px-4" style={{ color: colors.offWhiteDark }}>
             A collection of technologies I work with to build amazing applications
           </p>
         </motion.div>
 
+        {/* Category Buttons */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -140,7 +162,7 @@ const TechStake = () => {
             <motion.button
               key={category.id}
               onClick={() => setActiveSection(category.id)}
-              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-medium transition-all duration-300 flex items-center gap-2 ${
                 activeSection === category.id 
                   ? 'bg-gradient-to-r from-cherry to-cherryDark text-white shadow-lg shadow-cherry/30' 
                   : 'bg-white/5 text-white/70 hover:bg-white/10'
@@ -151,21 +173,22 @@ const TechStake = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + (index * 0.1) }}
             >
-              <span className="text-2xl">{category.icon}</span>
-              <span>{category.name}</span>
+              <span className="text-xl sm:text-2xl">{category.icon}</span>
+              {!isMobile && <span>{category.name}</span>}
             </motion.button>
           ))}
         </motion.div>
 
+        {/* Tech Icons Grid */}
         <motion.div 
-          className="backdrop-blur-xl bg-white/5 p-8 lg:p-12 rounded-2xl border border-white/10 shadow-2xl"
+          className="backdrop-blur-xl bg-white/10 p-4 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl border border-white/10 shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <motion.div 
-            className="overflow-hidden relative min-h-[200px] flex flex-wrap justify-center"
+            className="overflow-hidden relative min-h-[150px] sm:min-h-[100px] flex flex-wrap justify-center gap-2 sm:gap-4"
             layout
             transition={{ duration: 0.4 }}
           >
@@ -181,14 +204,29 @@ const TechStake = () => {
           </motion.div>
         </motion.div>
 
+        {/* Optional Stats Section */}
         <motion.div 
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-8 sm:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8 px-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          {/* Interactive 3D Tech Objects remain the same */}
+          {[
+            { label: 'Technologies', value: '40+' },
+            { label: 'Projects', value: '10+' },
+            { label: 'Experience', value: '3+ Years' },
+            { label: 'Github Repos', value: '16+' }
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              className="backdrop-blur-md bg-white/10 p-4 text-white rounded-lg border border-white/10 text-center"
+              whileHover={{ scale: 1.05, borderColor: colors.cherry }}
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold text-cherry mb-2">{stat.value}</h3>
+              <p className="text-sm sm:text-base text-offWhiteDark">{stat.label}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </motion.div>
