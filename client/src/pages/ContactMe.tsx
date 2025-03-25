@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
@@ -58,15 +58,19 @@ const ContactMe: React.FC = () => {
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const formRef = useRef<HTMLFormElement>(null);
 
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }, []);
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
         emailjs.sendForm(
-            'service_qnllp6d',
-            'template_wl829tw',
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             formRef.current!,
-            'sInf_kZ0ADocq31Qp'
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then(() => {
                 setSubmitSuccess(true);
