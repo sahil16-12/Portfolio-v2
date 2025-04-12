@@ -22,7 +22,7 @@ const socialLinks = [
     {
         name: 'Resume',
         icon: <HiDocument size={24} />,
-        url: '/Resume.pdf',
+        url: '/Resume-25.pdf',
         style: { background: `linear-gradient(135deg, ${colors.cherry}, ${colors.cherryDark})` }
     },
     {
