@@ -14,16 +14,16 @@ const colors = {
 // Achievements data
 const achievements = [
     {
-        title: "HackOut'24",
-        description: "Our team 'Digital Dreamers' made it to the top 10 amongst 1200+ participants at HackOut'24, hosted by DA-IICT, Gandhinagar.",
-    },
-    {
-        title: "DU-HACKS'23",
-        description: "Certified by DU-HACKS'23 (Hackathon-2023)",
+        title: "Software Intern - HolboxAI",
+        description: "Made real life projects and contributed to AI-powered solutions, focusing on frontend, backend developement.",
     },
     {
         title: "DU-HACKS'25",
         description: "Finished in TOP-15 in DU-HACKS'25 (Hackathon-2024)",
+    },
+    {
+        title: "DU-HACKS'23",
+        description: "Certified by DU-HACKS'23 (Hackathon-2023)",
     },
 ];
 
@@ -45,23 +45,7 @@ const AboutMe: React.FC = () => {
 
                 {/* Photo and Introduction - Improved Mobile Layout */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-12 md:mb-16">
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        whileHover={{ scale: 1.05 }}
-                        className="relative h-48 w-48 md:h-64 md:w-64 rounded-full overflow-hidden border-1 cursor-pointer"
-                        style={{
-                            borderColor: colors.cherry,
-                            boxShadow: `0 0 20px ${colors.cherry}40`,
-                        }}
-                    >
-                        <img
-                            src="gotme.png"
-                            alt="Danish Vahora"
-                            className="w-full h-full object-cover"
-                        />
-                    </motion.div>
+
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -69,13 +53,12 @@ const AboutMe: React.FC = () => {
                         className="text-lg md:text-xl max-w-lg text-center md:text-left px-4 md:px-0"
                         style={{ color: colors.offWhiteDark }}
                     >
-                        I am he, a craftsman of code, a Full Stack Developer of unyielding passion . <br /> My thirst for knowledge knows no bounds, and I roam the vast lands of technology like a maester seeking ancient truths. <br />
-
-                        In the realm of logic and chaos, I find my strength. Be it the banners of Front-End or the deep dungeons of Back-End, I wield my tools with mastery.
-<br />
-                        With every challenge, I rise — forging solutions not only swift, but steadfast and true. <br />Mine is a mind that thrives on growth, stoked by the fires of creativity and honed in the crucible of problem-solving. <br />
-
-                        I swear by the Old Gods and the New, my code shall endure, ever meeting the storms of change with elegance and might.💀⚔️                    </motion.p>
+                        A passionate software developer with a focus on building innovative and user-friendly applications. 
+                     
+                        I enjoy turning ideas into reality through clean and efficient code. 
+                        Always eager to learn and grow, I thrive on tackling challenges and continuously improving my skills.
+                        
+                         Let's collaborate and create something amazing!</motion.p>
                 </div>
 
                 {/* Achievements Timeline - Mobile Optimized */}
@@ -138,22 +121,22 @@ const AboutMe: React.FC = () => {
                                 details: [
                                     "B.Tech Computer Engineering (2022-2026)",
                                     "Nadiad, India",
-                                    "Current CPI: 8.31"
+                                    "Current CPI: 8.76"
                                 ]
                             },
                             {
-                                school: "Knowledge High School",
+                                school: "Basil School",
                                 details: [
                                     "H.S.C Board (2022)",
-                                    "Anand, Gujarat",
+                                    "Vadodara, Gujarat",
                                     "Percentage: 84.76%"
                                 ]
                             },
                             {
-                                school: "Knowledge High School",
+                                school: "Faiz School",
                                 details: [
                                     "S.S.C Board (2020)",
-                                    "Anand, Gujarat",
+                                    "Vadodara, Gujarat",
                                     "Percentage: 89.33%"
                                 ]
                             }

@@ -44,150 +44,33 @@ const projectsData = [
     },
     {
         id: 2,
-        title: "LeafCare AI",
-        shortDescription: "Enterprise plant disease detection system using deep learning and computer vision for agricultural optimization.",
-        fullDescription: "An AI-powered solution addressing annual 40% crop loss through automated plant disease detection. Combines deep convolutional neural networks (CNN) with transfer learning for 98.2% validation accuracy. Features real-time monitoring via IoT integration, predictive analytics for disease patterns, and seamless integration with farm management systems. The system processes 150,000+ images across 38 plant species and 87 disease classes using a robust pipeline with image normalization/augmentation. Built with TensorFlow and optimized with NVIDIA A100 GPUs, it offers scalable cloud deployment with continuous model updates through user feedback loops. Supports precision agriculture, crop insurance analytics, and academic research with comprehensive datasets.",
-        image: "/LeafCare/LeafCare.png",
+        title: "CabNest",
+        shortDescription: "A ride booking platform with real-time tracking and secure authentication.",
+        fullDescription: "Welcome to CabNest, a full-stack cab booking application designed to provide seamless ride booking experiences for riders and efficient management tools for drivers and admins. 🚗✨",
+        image: "/CabNest/image.png",
         mockupImages: [
-            "/LeafCare/LeafCare(1).png",
-            "/LeafCare/LeafCare(2).png",
-            "/LeafCare/LeafCare(3).png"
+            
+            "/CabNest/image(2).png",
+            "/CabNest/image(3).png",
+            "/CabNest/image(1).png",
+            "/CabNest/image(4).png",
+            "/CabNest/image(5).png"
         ],
-        tags: ["AI/ML", "Agriculture", "Computer Vision", "Deep Learning", "IoT", "TensorFlow"],
+        tags: ["React.js", "NoSQL", "Real-time", "Tailwind", "Authentication", "Node.js"],
         technologies: [
-            "TensorFlow",
-            "CNN Architecture",
-            "Python",
+            "javascript",
             "React",
             "Node.js",
-            "Docker",
-            "AWS EC2",
+            "Vercel",
             "MongoDB",
-            "PostgreSQL",
-            "NVIDIA CUDA",
-            "Image Augmentation",
             "JWT Authentication"
         ],
-        githubUrl: "https://github.com/DanishVahora/leafcare",
-        liveUrl: "https://leafcare-production.up.railway.app/",
+        githubUrl: "https://github.com/sahil16-12/CabNest",
+        liveUrl: "https://cab-nest.vercel.app/",
         color: "#2E8B57",
         year: "2023",
-        category: "Machine Learning"
-    },
-    {
-        id: 3,
-        title: "Pawn Wars",
-        shortDescription: "Modern chess platform featuring real-time multiplayer battles and AI integration with Stockfish engine.",
-        fullDescription: "A dynamic chess application combining traditional gameplay with modern tech stack. Features real-time multiplayer matches with Socket.io synchronization, AI mode powered by Stockfish engine (difficulty levels from beginner to grandmaster), and interactive elements like move history/analysis and in-game chat. Includes dual control schemes (click/drag), responsive design for all devices, and secure room-based matchmaking. Built with React TypeScript frontend, Node.js/Express backend, and chess.js for game logic. Offers evaluation bar, undo functionality, and deployable chess engine insights for strategic improvement.",
-        image: "/PawnWars/PawnWars.png",
-        mockupImages: [
-            "/PawnWars/PawnWars(1).png",
-            "/PawnWars/PawnWars(2).png",
-            "/PawnWars/PawnWars(3).png"
-        ],
-        tags: ["Chess", "Multiplayer", "AI", "Real-time", "TypeScript", "WebSocket"],
-        technologies: [
-            "React",
-            "TypeScript",
-            "Vite",
-            "Node.js",
-            "Express",
-            "Socket.io",
-            "chess.js",
-            "Stockfish",
-            "Tailwind CSS",
-            "WebRTC",
-            "JWT",
-            "Vercel"],
-        githubUrl: "https://github.com/DanishVahora/PawnWars.git",
-        liveUrl: "https://pawn-wars.vercel.app/",
-        color: "black",
-        year: "2024",
         category: "Web Application"
-    },
-    {
-        id: 4,
-        title: "केB Karo",
-        shortDescription: "Full-stack transportation solution with real-time tracking, built on ASP.NET Core MVC and SQL Server.",
-        fullDescription: "A comprehensive cab management platform enabling users to book rides and drivers to accept/reject requests via interactive interfaces. Features dual authentication systems for users/drivers, real-time location tracking using Leaflet.js API, and booking status management (pending/completed/canceled). Built with ASP.NET Core MVC backend, Entity Framework Core ORM, and Razor Pages/Bootstrap frontend. Implements complex booking workflows with fare calculation based on distance, historical data tracking, and rejection logging. Database architecture includes SQL Server tables for users, drivers, cabs, bookings, and rejected bookings. Supports responsive design across devices with potential for future expansion including payment integration and driver rating systems.",
-        image: "/CabKaro/image.png",
-        mockupImages: [
-            "/CabKaro/image(1).png",
-            "/CabKaro/image(2).png",
-            "/CabKaro/image(3).png"
-        ],
-        tags: ["ASP.NET", "MVC", "SQL", "Real-time", "Bootstrap", "Entity Framework"],
-        technologies: [
-            "ASP.NET Core",
-            "Entity Framework Core",
-            "SQL Server",
-            "Razor Pages",
-            "Leaflet.js",
-            "Bootstrap",
-            "JavaScript",
-            "HTML5",
-            "CSS3",
-            "JWT",
-            "REST API",
-        ],
-        githubUrl: "https://github.com/DanishVahora/CabBookingSystem.git",
-        liveUrl: "https://CabBooking/",
-        color: "black",
-        year: "2024",
-        category: "Web Application"
-    },
-    {
-        id: 5,
-        title: "EmotionAI",
-        shortDescription: "Real-time facial emotion detection system using deep learning and computer vision.",
-        fullDescription: "A CNN-based emotion recognition solution that analyzes facial expressions through webcam feeds or uploaded images. Features 7 emotion categories (Happy, Sad, Angry, Disgust, Fear, Surprise, Neutral) with live confidence scores and historical trend tracking. Built with a TensorFlow/Keras model trained on FER2013 dataset (63% validation accuracy), integrated with OpenCV for real-time face detection. The system processes 48x48 grayscale images through 4 convolutional layers with max pooling and dropout regularization. Includes a React frontend with Recharts visualization and Flask API backend. Supports both live camera analysis and image uploads with emotion history analytics.",
-        image: "/EmotionAI/EmotionAI.png",
-        mockupImages: [
-            "EmotionAI/EmotionAI(1).png",
-            "EmotionAI/EmotionAI(2).png",
-            "EmotionAI/EmotionAI(3).png"
-        ],
-        tags: ["Machine Learning", "Computer Vision", "Real-time", "React", "Python", "CNN"],
-        technologies: ["React",
-            "TailwindCSS",
-            "Recharts",
-            "Python",
-            "TensorFlow",
-            "Keras",
-            "OpenCV",
-            "Flask",
-            "FER2013 Dataset",
-            "Convolutional Neural Networks",
-            "Axios",
-            "Uvicorn",
-            "Face Detection",
-            "Emotion Recognition"],
-        githubUrl: "https://github.com/DanishVahora/CNN_Emotion_Recognition.git",
-        liveUrl: "https://emotionai-demo.vercel.app/",
-        color: "blue",
-        year: "2023",
-        category: "Machine Learning"
-    },
-    {
-        id: 6,
-        title: "FitnessTracking Application",
-        shortDescription: "Mobile fitness tracking app with Flutter frontend and Node.js backend for activity monitoring and personalized workouts.",
-        fullDescription: "A comprehensive mobile fitness tracking application designed to help users monitor physical activities, track workouts, and achieve fitness goals. Features include JWT-based user authentication, workout logging, calorie tracking, progress analytics with charts, and personalized workout generation. Built with Flutter and Dart for a cross-platform mobile experience, coupled with a Node.js/Express backend for API management. Includes secure authentication middleware and supports both MongoDB/MySQL databases. The responsive design ensures seamless experience across mobile devices.",
-        image: "/FtnessTracker/FtnessTracker.jpg",
-        mockupImages: [
-            "/FtnessTracker/FtnessTracker(1).png",
-            "/FtnessTracker/FtnessTracker(2).png",
-            "/FtnessTracker/FtnessTracker(3).png"
-        ],
-        tags: ["Dart", "Flutter", "MongoDB", "Node.js", "Fitness", "Mobile App"],
-        technologies: ["Dart", "Flutter", "MongoDB", "Node.js", "Express.js", "JWT", "Bcrypt", "REST API", "Charting", "Cross-Platform"],
-        githubUrl: "https://github.com/DanishVahora/fitness_app_frontend-main.git",
-        liveUrl: "https://health-tracker.demo",
-        color: "black",
-        year: "2024",
-        category: "Mobile Application"
-    },
-    
+    }
 ];
 
 // Tag component for project technologies
@@ -594,7 +477,7 @@ const Projects: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <motion.a
-                            href="https://github.com/DanishVahora"
+                            href="https://github.com/sahil16-12"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-8 py-4 rounded-full text-lg font-medium text-white border-2 border-cherry hover:bg-cherry/20 transition-all duration-300 flex items-center gap-3"

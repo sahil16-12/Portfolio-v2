@@ -22,19 +22,19 @@ const socialLinks = [
     {
         name: 'Resume',
         icon: <HiDocument size={24} />,
-        url: '/Resume-25.pdf',
+        url: '/Resume.pdf',
         style: { background: `linear-gradient(135deg, ${colors.cherry}, ${colors.cherryDark})` }
     },
     {
         name: 'GitHub',
         icon: <FaGithub size={24} />,
-        url: 'https://github.com/DanishVahora',
+        url: 'https://github.com/sahil16-12',
         style: { background: '#333' }
     },
     {
         name: 'LinkedIn',
         icon: <FaLinkedin size={24} />,
-        url: 'https://www.linkedin.com/in/danish-vahora-8b3b6b262/',
+        url: 'https://www.linkedin.com/in/shahil-vora/',
         style: { background: '#0077B5' }
     },
 ];
@@ -232,7 +232,7 @@ const LandingPage: React.FC = () => {
                                 }}
                             >
                                 <img
-                                    src="/DD.webp"
+                                    src="/sahil.jpeg"
                                     alt="Danish Vahora"
                                     className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
                                 />
@@ -248,7 +248,7 @@ const LandingPage: React.FC = () => {
                         >
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
                                 <span className="bg-gradient-to-r from-[#FAF9F6] to-[#DC143C] text-transparent bg-clip-text">
-                                    Danish Vahora
+                                    Shahil Vora
                                 </span>
                             </h1>
 

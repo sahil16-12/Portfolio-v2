@@ -62,47 +62,62 @@ const ContactMe: React.FC = () => {
         emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     }, []);
 
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setIsSubmitting(true);
+
+    //     emailjs.sendForm(
+    //         import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    //         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    //         formRef.current!,
+    //         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    //     )
+    //         .then(() => {
+    //             setSubmitSuccess(true);
+    //             setIsSubmitting(false);
+    //             formRef.current?.reset();
+    //             triggerConfetti(); // Add confetti celebration
+
+    //             // Auto-hide success message after 3 seconds
+    //             setTimeout(() => {
+    //                 setSubmitSuccess(false);
+    //             }, 3000);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Email sending failed:', error);
+    //             setIsSubmitting(false);
+    //         });
+    // };
+
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-        emailjs.sendForm(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            formRef.current!,
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        )
-            .then(() => {
-                setSubmitSuccess(true);
-                setIsSubmitting(false);
-                formRef.current?.reset();
-                triggerConfetti(); // Add confetti celebration
+    setTimeout(() => {
+        setSubmitSuccess(true);
+        setIsSubmitting(false);
+        formRef.current?.reset();
+        triggerConfetti();
 
-                // Auto-hide success message after 3 seconds
-                setTimeout(() => {
-                    setSubmitSuccess(false);
-                }, 3000);
-            })
-            .catch((error) => {
-                console.error('Email sending failed:', error);
-                setIsSubmitting(false);
-            });
-    };
-
+        setTimeout(() => {
+            setSubmitSuccess(false);
+        }, 3000);
+    }, 1000);
+};
     const socialLinks = [
         {
             icon: <Github size={24} />,
-            link: 'https://github.com/DanishVahora',
+            link: 'https://github.com/sahil16-12',
             color: colors.offWhite
         },
         {
             icon: <Linkedin size={24} />,
-            link: 'https://www.linkedin.com/in/danish-vahora-8b3b6b262/',
+            link: 'https://www.linkedin.com/in/shahil-vora/',
             color: '#0A66C2'
         },
         {
             icon: <Instagram size={24} />,
-            link: 'https://www.instagram.com/vhora_danish/',
+            link: 'https://www.instagram.com/_sahil.16__/',
             color: '#E1306C'
         }
     ];
@@ -139,18 +154,18 @@ const ContactMe: React.FC = () => {
                             {[
                                 { 
                                     icon: <Mail size={20} className="sm:w-6 sm:h-6" />, 
-                                    text: 'danishvhora786@gmail.com',
-                                    href: 'mailto:danishvhora786@gmail.com'
+                                    text: 'sahil16december@gmail.com',
+                                    href: 'mailto:sahil16december@gmail.com'
                                 },
                                 { 
                                     icon: <Phone size={20} className="sm:w-6 sm:h-6" />, 
-                                    text: '+91 8200528373',
-                                    href: 'tel:+918200528373'
+                                    text: '+91 9898557401',
+                                    href: 'tel:+919898557401'
                                 },
                                 { 
                                     icon: <MapPin size={20} className="sm:w-6 sm:h-6" />, 
                                     text: 'Anand, Gujarat, India',
-                                    href: 'https://goo.gl/maps/YOUR_LOCATION'
+                                    href: 'https://maps.app.goo.gl/3E7E5REijsTnRE1m6'
                                 }
                             ].map((contact, index) => (
                                 <a
